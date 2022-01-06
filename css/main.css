@@ -1,0 +1,244 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --clr-primary: #F70058;
+    --fw-normal: 400;
+    --fw-black: 900;
+    --fw-sm: 400;
+    --fw-no: 500;
+    --fw-bi: 700;
+    --fw-bp: 800;
+    --clr-darkblue: rgb(23, 56, 76);
+    --clr-orange: rgb(228, 130, 0);
+    --clr-dark: rgb(0,0,0);
+    --clr-base: rgb(255, 255, 255);
+    --grid: minmax(1em, 10%)
+            minmax(10rem, 22ch) 
+            minmax(10rem, 23ch)
+            minmax(1em, 3fr)
+            max-content 
+            ;
+}
+
+body { 
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.125rem;
+    color: var(--clr-dark);
+    line-height: 1.6;
+    background: var(--clr-base);
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+h1, h2, h3 { line-height: 1; }
+
+p {
+    margin-top: 0;
+}
+
+header {
+    background-color: var(--clr-darkblue);
+    text-align: center;
+}
+
+.logo {
+    margin-top: 1em;
+}
+
+.glassbranco {
+    margin-left: 30em;
+}
+
+.nav__list {
+    display: flex;
+    justify-content: space-between;
+    max-width: 35rem;
+    margin: 0 auto;
+    padding: 1em;
+    list-style: none;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    font-weight: var(--fw-bi);
+    letter-spacing: 1px;
+}
+
+.nav__list-item {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.nav__list-itemz {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: var(--clr-base);
+}
+
+.nav__linkz {
+    text-decoration: none;
+    color: var(--clr-dark);
+    background-color: var(--clr-base);
+    padding: .5em 1.25em;;
+}
+
+.nav__linkz:hover {
+    background-color: var(--clr-dark);
+}
+
+.button {
+    font-weight: 400;
+    text-align-last: right;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1rem;
+    padding: .5em 1.25em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    margin-bottom: .75em;
+    margin-left: 10em;
+    border-radius: 100px;
+}
+
+.color {
+    background-color: var(--clr-orange);
+    color: var(--clr-light);
+}
+
+.review {
+    margin-left: 11rem;   
+    margin-top: 113rem;
+    color: white;
+}
+
+.revieww {
+    margin-left: 11rem;   
+    margin-top: 130rem;
+    font-weight: var(--fw-sm);
+    color: white;
+}
+
+.center {
+    display: block;
+    margin-left: 11rem;
+    margin-top: 17rem;
+    width: 130%;
+    padding: 2rem;
+}
+
+.ba {
+    background-color: var(--clr-orange);
+}
+
+.re {
+    text-decoration: none;
+    padding: 13em;
+    border-radius: 100px;
+}
+
+.view {
+    background-color: var(--clr-darkblue);
+}
+
+.main {
+    padding: 3em 1em 10rem;
+}
+
+.main__glasses_1 {
+    position: relative;
+    display:inline-block;
+    margin-left: 10em;
+    margin-bottom: .20em;
+    margin-top: 5rem;
+    font-weight: var(--fw-bp);
+    font-size: 2.7rem;
+    width: 500px;
+}
+
+.main__glasses_1_info {
+    font-weight: var(--fw-sm);
+    margin-top: 1rem;
+}
+
+.main__glasses_2 {
+    margin-left: 10rem;
+    margin-top: 10rem;
+}
+
+.glasses2 {
+    margin-left: 15rem;
+}
+
+.main__glasses_3 {
+    margin-left: 30rem;
+}
+
+@media (min-width: 700px) {
+    .main {
+        display: grid;
+        grid-template-columns: var(--grid);            
+        justify-items: start;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .main > * { grid-column: 2 / 4; }
+
+    .main--page {
+        background-position: left bottom;
+    }
+}
+
+@media (min-width: 1000px) {
+    header {
+        display: grid;
+        grid-template-columns: var(--grid);
+        align-items: center;
+    }
+
+    .logo,
+    .nav,
+    .margem {
+        grid-row: 1;
+        margin: 0;
+    }
+
+    .logo {
+        grid-column: 2;
+    }
+
+    .nav {
+        grid-column: 2 / 5;
+        justify-self: end;
+        margin-right: 3em;
+    }
+
+    .margem {
+        grid-column: -2 / -1;
+        justify-self: end;
+        margin: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .main--page { background-position: center right;}
+}
+
